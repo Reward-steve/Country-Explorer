@@ -1,0 +1,45 @@
+@mixin Apple-Watch {
+	@media screen and (min-width: 150px) {
+		@content;
+	}
+}
+@mixin xsmall {
+	@media screen and (min-width: 320px) {
+		@content;
+	}
+}
+@mixin small {
+	@media screen and (min-width: 480px) {
+		@content;
+	}
+}
+@mixin medium {
+	@media screen and (min-width: 678px) {
+		@content;
+	}
+}
+@mixin large {
+	@media screen and (min-width: 880px) {
+		@content;
+	}
+}
+@mixin xlarge {
+	@media screen and (min-width: 1020px) {
+		@content;
+	}
+}
+@mixin xxlarge {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+@mixin myScreen {
+	@media screen and (min-width: 1320px) {
+		@content;
+	}
+}
+@mixin xx-large {
+	@media screen and (min-width: 1440px) {
+		@content;
+	}
+}

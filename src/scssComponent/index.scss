@@ -1,0 +1,831 @@
+@use "sass:math";
+@import "_variables.scss";
+@import "_mixin.scss";
+@import "_breakpoints";
+
+* {
+	@include universalSelector;
+}
+.body {
+	width: 100%;
+	padding-bottom: 15px;
+	height: auto;
+	@include Apple-Watch {
+		padding-bottom: 0;
+	}
+	@include xsmall {
+		padding-bottom: 15px;
+	}
+	@include medium {
+		padding-bottom: 10px;
+	}
+}
+.Navbar {
+	@include bgFlex;
+	justify-content: space-between;
+	@include link;
+	height: 75px;
+	position: sticky;
+	width: 100%;
+	top: 0;
+	z-index: 5;
+	@include Apple-Watch {
+		justify-content: center;
+		flex-direction: column;
+		height: 50px;
+		align-items: center;
+	}
+	@include xsmall {
+		width: 100%;
+		height: 80px;
+		justify-content: space-between;
+		flex-direction: initial;
+	}
+	@include large {
+		height: 75px;
+	}
+	h2 {
+		@include bgFlex;
+		justify-content: end;
+		width: 20%;
+		@include Apple-Watch {
+			font: bold 13px / 32px Roboto, sans-serif;
+			width: 100%;
+			justify-content: center;
+			height: 50%;
+		}
+		@include xsmall {
+			font: bold 20px / 29px Roboto, sans-serif;
+			width: 65%;
+		}
+		@include small {
+			justify-content: end;
+			width: 45%;
+		}
+		@include medium {
+			font: bold 20px / 29px Roboto, sans-serif;
+			width: 30%;
+		}
+		@include large {
+			width: 26%;
+		}
+		@include xlarge {
+			width: 22%;
+		}
+		@include xxlarge {
+			width: 19%;
+		}
+		@include myScreen {
+			width: 18%;
+		}
+		@include xx-large {
+			width: 16.5%;
+		}
+	}
+	.mode {
+		width: $halfSize - 36;
+		cursor: pointer;
+		font-size: 20px;
+		transition: 0.3s linear;
+		font: 600 16px / 32px Roboto, sans-serif;
+		@include Apple-Watch {
+			font: bold 18px / 29px Roboto, sans-serif;
+			width: $fullSize;
+			justify-content: center;
+		}
+		@include xsmall {
+			font: bold 18px / 29px Roboto, sans-serif;
+			justify-content: left;
+			width: $halfSize - 40;
+		}
+		@include small {
+			width: $halfSize - 20;
+		}
+		@include medium {
+			font: bold 18px / 29px Roboto, sans-serif;
+			width: $halfSize - 27.5;
+		}
+		@include large {
+			width: $halfSize - 32;
+		}
+		@include xlarge {
+			width: $halfSize - 34;
+		}
+		@include xxlarge {
+			width: $halfSize - 36.5;
+		}
+		@include myScreen {
+			width: 12.5%;
+		}
+		@include xx-large {
+			width: $halfSize - 38.5;
+		}
+	}
+	div {
+		i {
+			margin: 0;
+		}
+	}
+	p {
+		@include Apple-Watch {
+			display: none;
+		}
+		@include xsmall {
+			display: none;
+		}
+		@include small {
+			display: block;
+		}
+	}
+}
+
+.search-box {
+	@include bgFlex;
+	justify-content: space-between;
+	cursor: pointer;
+	font-size: 20px;
+	font: 600 16px / 32px Roboto, sans-serif;
+	height: 140px;
+	width: $fullSize - 12;
+	position: static;
+	@include Apple-Watch {
+		font: 600 13px / 32px Roboto, sans-serif;
+		height: 80px;
+		flex-direction: column;
+		width: 100%;
+	}
+	@include xsmall {
+		font: 600 16px / 32px Roboto, sans-serif;
+		align-items: flex-start;
+		height: 190px;
+		width: 90%;
+		justify-content: space-evenly;
+		flex-direction: column;
+	}
+	@include small {
+		align-items: flex-start;
+		height: 150px;
+		width: 90%;
+		justify-content: space-evenly;
+		flex-direction: column;
+	}
+	@include medium {
+		font: 600 17.5px / 32px Roboto, sans-serif;
+		align-items: center;
+		height: 170px;
+		justify-content: space-between;
+		flex-direction: initial;
+		width: $fullSize - 10;
+	}
+	@include large {
+		height: 140px;
+		width: $fullSize - 8;
+	}
+	@include xxlarge {
+		width: $fullSize - 6;
+	}
+	.search-bar {
+		@include bgFlex;
+		justify-content: center;
+		width: $halfSize - 10;
+		height: $fullSize - 55;
+		border-radius: 5px;
+		@include Apple-Watch {
+			box-shadow: 0 5px 6px -5px black;
+			height: 42%;
+			margin-top: 3px;
+			width: 95%;
+		}
+		@include xsmall {
+			box-shadow: 0 5px 6px -5px black;
+			height: $halfSize - 20;
+			width: $fullSize;
+		}
+		@include small {
+			height: $halfSize - 20;
+			width: $fullSize;
+		}
+		@include medium {
+			width: $halfSize + 12;
+		}
+		@include large {
+			width: $halfSize;
+			height: $fullSize - 55;
+		}
+		@include xlarge {
+			width: $halfSize - 10;
+		}
+		.icon {
+			width: 10%;
+			@include xsmall {
+				font-size: 20px;
+				font-weight: 100;
+			}
+		}
+		.text {
+			outline: none;
+			border: none;
+			width: 70%;
+			height: $fullSize;
+			font: 100 18px / 32px Roboto, sans-serif;
+			@include Apple-Watch {
+				font: 100 13px / 32px Roboto, sans-serif;
+			}
+			@include xsmall {
+				font: 100 16.5px / 32px Roboto, sans-serif;
+			}
+			@include small {
+				font: 100 18px / 32px Roboto, sans-serif;
+			}
+		}
+
+		.dropdown {
+			scrollbar-width: thin;
+			@include Apple-Watch {
+				top: 36px;
+				border-radius: 0 0 10px 10px;
+				border-bottom: none;
+				min-height: 80 px;
+			}
+			@include xsmall {
+				top: 60px;
+				border-radius: 0 0 10px 10px;
+				border-bottom: none;
+				min-height: initial;
+			}
+			@include small {
+				top: 50px;
+				min-height: 190px;
+			}
+			@include medium {
+				top: 55px;
+			}
+			@include large {
+				top: 65px;
+			}
+			@include xlarge {
+				top: 67px;
+				min-height: 200px;
+			}
+			ul {
+				@include xsmall {
+					font: 100 16.5px / 32px Roboto, sans-serif;
+				}
+				@include small {
+					font: 100 17px / 32px Roboto, sans-serif;
+				}
+				@include medium {
+					font: 100 17.5px / 32px Roboto, sans-serif;
+				}
+				@include xlarge {
+					font: 100 18px / 32px Roboto, sans-serif;
+				}
+				li {
+					@include Apple-Watch {
+						padding: 0 3px;
+						margin: 0;
+					}
+					@include xsmall {
+						margin: initial;
+						padding: 0 30px;
+					}
+				}
+			}
+		}
+	}
+	.filter {
+		@include bgFlex;
+		justify-content: center;
+		width: $halfSize - 32;
+		height: $fullSize - 55;
+		position: relative;
+		border-radius: 5px;
+		font-family: inherit;
+		@include Apple-Watch {
+			box-shadow: 0 5px 6px -5px black;
+			font-weight: normal;
+			height: $halfSize - 10;
+			font-size: 13px;
+			width: $halfSize + 30;
+		}
+		@include xsmall {
+			box-shadow: 0 5px 6px -5px black;
+			font-weight: normal;
+			height: $halfSize - 20;
+			font-size: 15px;
+			width: $halfSize + 10;
+		}
+		@include small {
+			font-size: 16px;
+			width: $halfSize;
+		}
+		@include medium {
+			font-size: 16px;
+			width: $halfSize - 20;
+		}
+		@include large {
+			width: $halfSize - 25;
+			height: $fullSize - 55;
+		}
+		@include xlarge {
+			width: 22%;
+			font-size: large;
+		}
+		@include xxlarge {
+			width: $halfSize - 32;
+			font-size: medium;
+		}
+		.filter-content {
+			align-items: start;
+			list-style: circle;
+			transition: 1s;
+			font-weight: 100;
+			position: absolute;
+			width: $fullSize;
+			justify-content: center;
+			flex-direction: column;
+			height: auto;
+			border-radius: 0 0 10px 10px;
+			z-index: 3;
+			@include Apple-Watch {
+				top: 34px;
+				font-size: 13.5px;
+			}
+			@include xsmall {
+				top: 60px;
+				font-size: 16.5px;
+			}
+			@include small {
+				top: 50px;
+				font-size: 16px;
+			}
+			@include medium {
+				top: 55px;
+				font-size: 17.5px;
+			}
+			@include large {
+				top: 65px;
+			}
+			@include xlarge {
+				top: 67px;
+				font-size: medium;
+			}
+			li {
+				width: 100%;
+				padding: 0 0 10px 37px;
+				@include Apple-Watch {
+					padding: 0 15px;
+				}
+				@include xsmall {
+					padding: 0 0 2px 39px;
+				}
+				@include medium {
+					padding: 0 0 2px 40px;
+				}
+				@include large {
+					padding: 0 0 2px 60px;
+				}
+				&:hover {
+					list-style: disc;
+					background: hsla(209, 26%, 17%, 0.295);
+					transition: background 0.5s linear;
+					color: #0e85ee;
+				}
+			}
+		}
+	}
+}
+
+.main {
+	@include bgFlex;
+	justify-content: center;
+	width: $fullSize;
+	height: auto;
+	padding-bottom: 30px;
+	.main-content {
+		gap: 45px;
+		width: $fullSize;
+		height: auto;
+		.content {
+			@include bgFlex;
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+
+.card {
+	font: 100 18px / 30px Roboto, sans-serif;
+	height: 320px;
+	border-radius: 10px;
+	box-shadow: 0 5px 6px -5px black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.3s linear;
+	cursor: pointer;
+	@include Apple-Watch {
+		height: 170px;
+		width: 140px;
+		font: 100 13.5px / 30px Roboto, sans-serif;
+	}
+	@include xsmall {
+		height: 320px;
+		width: 260px;
+		font: 100 18px / 30px Roboto, sans-serif;
+	}
+	@include medium {
+		width: 250px;
+	}
+	@include large {
+		width: 245px;
+	}
+	@include xlarge {
+		font: 100 16px / 30px Roboto, sans-serif;
+		width: 245px;
+	}
+	&:hover {
+		scale: 1.07;
+		@include Apple-Watch {
+			scale: 1;
+		}
+		@include medium {
+			scale: 1.02;
+		}
+		@include large {
+			scale: 1.04;
+		}
+	}
+	.flag {
+		width: 95%;
+		height: 170px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 10px;
+		@include Apple-Watch {
+			height: 125px;
+		}
+		@include xsmall {
+			height: 170px;
+		}
+		img {
+			border-radius: 10px;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	.card-details {
+		width: 80%;
+		font-style: italic;
+		@include Apple-Watch {
+			width: 90%;
+		}
+		@include xsmall {
+			width: 85%;
+		}
+		p {
+			@include Apple-Watch {
+				display: none;
+			}
+			@include xsmall {
+				display: block;
+			}
+		}
+	}
+}
+
+.country-name {
+	@include Apple-Watch {
+		font-size: medium;
+		text-align: center;
+		font-weight: 100;
+	}
+	@include xsmall {
+		letter-spacing: 1px;
+		text-align: initial;
+		font: icon;
+		font-weight: bold;
+		padding: 5px 0;
+		font-size: large;
+	}
+}
+
+span {
+	color: gray;
+	padding-left: 5px;
+}
+
+.scroll-to-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	z-index: 10;
+	right: 0.8%;
+	top: 90%;
+	@include Apple-Watch {
+		top: 80%;
+		display: none;
+	}
+	@include medium {
+		top: 90%;
+		right: 3%;
+		width: 20px;
+		height: 40px;
+	}
+	@include large {
+		width: 50px;
+		height: 50px;
+		right: 0.3%;
+	}
+	@include xlarge {
+		right: 0.1%;
+		display: block;
+	}
+	@include xxlarge {
+		right: 0.8%;
+	}
+	@include xx-large {
+		width: 20px;
+		right: 1%;
+	}
+}
+
+.arrow {
+	transform: translateY(0);
+	animation: move-up 1s infinite linear;
+	@keyframes move-up {
+		0% {
+			transform: translateY(10);
+		}
+		100% {
+			transform: translateY(-10px);
+		}
+	}
+}
+
+.back-arrow {
+	transform: translateX(6px);
+	animation: move-back 0.8s infinite linear;
+	@keyframes move-back {
+		0% {
+			transform: translateX(6px);
+		}
+		100% {
+			transform: translateX(-2px);
+		}
+	}
+}
+
+.country-list {
+	@include bgFlex;
+	row-gap: 30px;
+	margin-top: 15px;
+	@include Apple-Watch {
+		margin-top: 25px;
+		row-gap: 20px;
+		font-size: 1em;
+	}
+	@include xsmall {
+		margin-top: 15px;
+		column-gap: 2%;
+	}
+	@include medium {
+		margin: 0;
+		row-gap: 40px;
+		column-gap: 7%;
+		font-size: 1.3em;
+	}
+	@include large {
+		column-gap: 4%;
+	}
+	@include xlarge {
+		column-gap: 3%;
+	}
+	@include xxlarge {
+		column-gap: 4.5%;
+	}
+	@include myScreen {
+		column-gap: 6.5%;
+		row-gap: 65px;
+	}
+	@include xx-large {
+		column-gap: 2.2%;
+	}
+}
+
+.details-container {
+	.details-content {
+		@include xsmall {
+			max-width: 95%;
+		}
+		.homepage-button {
+			@include small {
+				display: flex;
+				align-items: center;
+				height: 55px;
+				width: 25%;
+				justify-content: right;
+			}
+			@include medium {
+				justify-content: flex-start;
+			}
+			div {
+				@include Apple-Watch {
+					padding: 5px;
+					width: 30px;
+				}
+				@include xsmall {
+					padding: 8px;
+					width: 70px;
+				}
+				p {
+					@include Apple-Watch {
+						display: none;
+					}
+					@include xsmall {
+						display: block;
+					}
+				}
+			}
+		}
+		.inner-content {
+			@include Apple-Watch {
+				flex-direction: column;
+			}
+
+			@include medium {
+				flex-direction: initial;
+			}
+
+			.image-container {
+				@include Apple-Watch {
+					height: 220px;
+					width: 110%;
+				}
+				@include xsmall {
+					height: 275px;
+					width: 100%;
+				}
+				@include small {
+					height: 280px;
+				}
+				@include medium {
+					height: 310px;
+				}
+				@include large {
+					height: 370px;
+				}
+				@include xlarge {
+					height: 400px;
+				}
+				img {
+					@include Apple-Watch {
+						height: 140px;
+						width: 100%;
+					}
+					@include xsmall {
+						height: 280px;
+						width: 100%;
+					}
+					@include small {
+						height: 99.5%;
+					}
+				}
+			}
+			.details-holder {
+				@include large {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					flex-direction: column;
+				}
+
+				h2 {
+					@include Apple-Watch {
+						font-size: 16px;
+					}
+					@include xsmall {
+						font-size: 25px;
+					}
+				}
+				.VS-details {
+					font-style: italic;
+					@include Apple-Watch {
+						gap: 0;
+						width: 100%;
+					}
+					@include xsmall {
+						width: initial;
+						gap: 8px;
+						align-items: normal;
+					}
+					@include medium {
+						padding: 2px 0;
+						gap: 2px;
+					}
+					div {
+						align-items: center;
+						@include Apple-Watch {
+							width: 100%;
+							border-bottom: 1px solid;
+							gap: 0;
+							flex-direction: column;
+						}
+						@include xsmall {
+							border-bottom: 1px solid;
+							flex-direction: initial;
+							gap: 0;
+						}
+						@include small {
+							justify-content: center;
+							width: 100%;
+						}
+						.HV-title {
+							width: 20%;
+							@include Apple-Watch {
+								font-size: 15px;
+								margin: 0;
+								font-weight: normal;
+							}
+							@include xsmall {
+								font-size: 18px;
+								margin-left: 10px;
+								font-weight: normal;
+							}
+							@include small {
+								margin: 0;
+								display: flex;
+								justify-content: start;
+								align-items: center;
+							}
+						}
+						.HV-value {
+							width: 80%;
+							@include Apple-Watch {
+								margin: 0px;
+								font-size: 15px;
+							}
+							@include xsmall {
+								margin-left: 0px;
+								font-size: 18px;
+							}
+							@include small {
+								margin-left: 10px;
+								display: flex;
+								justify-content: start;
+								align-items: center;
+							}
+						}
+					}
+				}
+				.border-country {
+					h2 {
+						@include large {
+							text-align: center;
+						}
+					}
+					div {
+						@include Apple-Watch {
+							row-gap: 4px;
+							column-gap: 4px;
+						}
+						@include xsmall {
+							row-gap: 4px;
+							column-gap: 4px;
+						}
+						@include small {
+							row-gap: 4px;
+							column-gap: 6px;
+						}
+						@include medium {
+							row-gap: 4px;
+							column-gap: 8px;
+							align-items: center;
+							justify-content: center;
+						}
+						@include large {
+							row-gap: 4px;
+							column-gap: 10px;
+						}
+						a {
+							span {
+								@include Apple-Watch {
+									padding: 2px;
+								}
+								@include xsmall {
+									padding: 8px;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
