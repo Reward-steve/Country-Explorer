@@ -1,6 +1,6 @@
 {
-	"short_name": "country App",
-	"name": "countryAPI React",
+	"short_name": "Country-App",
+	"name": "Country-App",
 	"icons": [
 		{
 			"src": "favicon.ico",

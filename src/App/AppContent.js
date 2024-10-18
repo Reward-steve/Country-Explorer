@@ -112,30 +112,28 @@ export default function AppContent() {
 			setFilteredData(filtered);
 		}
 	}, [selectedRegion, data]);
-
 	// Display loading or error states
 	if (loading) {
 		return (
 			<>
-				(
 				<p style={{ color: color.textColor, textAlign: "center" }}>
 					{"Loading............"}
 				</p>
-				)
 			</>
 		);
 	}
 	if (error) {
 		return (
 			<>
-				(
 				<p style={{ color: color.textColor, textAlign: "center" }}>
-					Error fetching data: <span>redirect</span>
+					Error fetching data: <span>redirecting...</span>
 				</p>
-				;{location.replace("http://localhost:3000/")})
+				{/* Redirect to the homepage */}
+				{location.replace(`${window.location.origin}/`)}
 			</>
 		);
 	}
+
 	return (
 		<BrowserRouter>
 			<Box className='body' bg={bg}>
