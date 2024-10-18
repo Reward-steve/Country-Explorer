@@ -76,7 +76,7 @@ export default function CountryCard({ data, bgColor, color }) {
 						p={10}
 						w={70}
 						borderRadius={6}
-						boxShadow={" 0 0 10px 0"}>
+						border={`1px solid ${color}`}>
 						<FaArrowLeft size={20} className='back-arrow' />
 						<Text fontSize='md'>Back</Text>
 					</HStack>
@@ -95,7 +95,6 @@ export default function CountryCard({ data, bgColor, color }) {
 							h='full'
 							overflow='hidden'
 							borderRadius={10}
-							boxShadow={`inset 0 0 50px 10px`}
 							className='image-container'>
 							<Image
 								src={country.flag}
