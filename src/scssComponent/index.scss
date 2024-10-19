@@ -529,8 +529,12 @@ span {
 	right: 0.8%;
 	top: 90%;
 	@include Apple-Watch {
-		top: 80%;
 		display: none;
+	}
+	@include xsmall {
+		top: 92%;
+		display: block;
+		right: 1.5%;
 	}
 	@include medium {
 		top: 90%;
@@ -545,7 +549,6 @@ span {
 	}
 	@include xlarge {
 		right: 0.1%;
-		display: block;
 	}
 	@include xxlarge {
 		right: 0.8%;

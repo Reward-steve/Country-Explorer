@@ -21,7 +21,7 @@ export default function ScrollToTop({ color }) {
 				<Box className='scroll-to-top'>
 					<Box
 						color={color}
-						borderRadius={50}
+						borderRadius={3}
 						w={"100%"}
 						h={"100%"}
 						display={"flex"}
@@ -29,7 +29,7 @@ export default function ScrollToTop({ color }) {
 						alignItems={"center"}
 						border={`1px solid ${color}`}
 						cursor='pointer'
-						boxShadow={`inset 0 0 20px -3px`}
+						boxShadow={"inset -1px -5px 6px -6px"}
 						onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
 						<FaArrowUp className='arrow' />
 					</Box>

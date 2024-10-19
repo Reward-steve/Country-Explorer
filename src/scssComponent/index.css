@@ -1,8 +1,13 @@
+@font-face {
+  font-family: "Open Sans";
+  src: url("../../public/asset/Open_Sans/static/OpenSans-Regular.ttf");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Open Sans";
 }
 
 .body {
@@ -645,6 +650,7 @@
 }
 .card .card-details {
   width: 80%;
+  font-style: italic;
 }
 @media screen and (min-width: 150px) {
   .card .card-details {
@@ -703,8 +709,14 @@ span {
 }
 @media screen and (min-width: 150px) {
   .scroll-to-top {
-    top: 80%;
     display: none;
+  }
+}
+@media screen and (min-width: 320px) {
+  .scroll-to-top {
+    top: 92%;
+    display: block;
+    right: 1.5%;
   }
 }
 @media screen and (min-width: 678px) {
@@ -725,7 +737,6 @@ span {
 @media screen and (min-width: 1020px) {
   .scroll-to-top {
     right: 0.1%;
-    display: block;
   }
 }
 @media screen and (min-width: 1200px) {
@@ -756,14 +767,13 @@ span {
 .back-arrow {
   transform: translateX(6px);
   animation: move-back 0.8s infinite linear;
-  color: red;
 }
 @keyframes move-back {
   0% {
     transform: translateX(6px);
   }
   100% {
-    transform: translateX(-6px);
+    transform: translateX(-2px);
   }
 }
 
@@ -777,6 +787,7 @@ span {
   .country-list {
     margin-top: 25px;
     row-gap: 20px;
+    font-size: 1em;
   }
 }
 @media screen and (min-width: 320px) {
@@ -792,6 +803,7 @@ span {
     row-gap: 40px;
     -moz-column-gap: 7%;
          column-gap: 7%;
+    font-size: 1.3em;
   }
 }
 @media screen and (min-width: 880px) {
@@ -959,6 +971,7 @@ span {
 }
 @media screen and (min-width: 678px) {
   .details-container .details-content .inner-content .details-holder .VS-details {
+    padding: 2px 0;
     gap: 2px;
   }
 }
@@ -998,7 +1011,7 @@ span {
 }
 @media screen and (min-width: 320px) {
   .details-container .details-content .inner-content .details-holder .VS-details div .HV-title {
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 10px;
     font-weight: normal;
   }
@@ -1023,7 +1036,7 @@ span {
 @media screen and (min-width: 320px) {
   .details-container .details-content .inner-content .details-holder .VS-details div .HV-value {
     margin-left: 0px;
-    font-size: 18px;
+    font-size: 16px;
   }
 }
 @media screen and (min-width: 480px) {
