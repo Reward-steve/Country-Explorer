@@ -1,27 +1,30 @@
-# 🌍 Country Explorer – React + TailwindCSS
+# 🌍 Country Explorer – React + Chakra UI + SCSS
 
-A clean, responsive UI for exploring country data using the REST Countries API.
-
-📌 **Features:**
-- Search by country name  
-- View flag, capital, population, and region  
-- Responsive card layout  
-- Clean component structure
-
-This project demonstrates my ability to build responsive UI components and consume live REST APIs — exactly what most modern frontend projects need.
-
----
-## 💡 Why This Matters
-
-Clients often need data-driven dashboards, product explorers, or profile-based apps.  
-This app proves I can:
-- Fetch and display live API data
-- Handle clean layout and spacing with Tailwind
-- Deliver modern, readable, component-based code
+An interactive and responsive app that lets users explore detailed information about countries around the world using the REST Countries API.
 
 ---
 
-🔗 Live Demo
-👉 [View the app here](https://my-country-app-three.vercel.app)
+## 🚀 Features
+
+- 🔎 Search countries by name  
+- 🧭 View flags, capitals, regions, populations, and more  
+- 💡 Dynamic country detail page  
+- 📱 Fully responsive across all screen sizes  
+- 🎨 Clean UI powered by Chakra UI and SCSS modules  
+
+---
+
+## 🛠 Tech Stack
+
+- **Framework**: React  
+- **Styling**: Chakra UI, SCSS Modules  
+- **Language**: JavaScript  
+- **Data Source**: [REST Countries API](https://restcountries.com)
+
+---
+
+## 🔗 Live Demo
+
+👉 [https://my-country-app-three.vercel.app](https://my-country-app-three.vercel.app)
 
 
